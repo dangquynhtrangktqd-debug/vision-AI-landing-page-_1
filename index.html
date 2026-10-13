@@ -180,12 +180,12 @@ footer .copy{grid-column:1/-1;border-top:1px solid #e1e6ee;padding-top:20px;colo
 
 <section class="contact" id="lien-he"><div class="wrap">
   <h2>Liên hệ với<br>chúng tôi</h2>
-  <form onsubmit="event.preventDefault();alert('Cảm ơn bạn! Chúng tôi sẽ liên hệ sớm.');this.reset()">
+  <form id="contact-form">
     <div><label for="dv">Đơn vị / Công ty</label><input id="dv" placeholder="Tên đơn vị của bạn" required></div>
     <div><label for="em">E-mail</label><input id="em" type="email" placeholder="example@vingroup.net" required></div>
     <div><label for="nd">Nội dung</label><textarea id="nd" placeholder="Bạn muốn tìm hiểu sản phẩm nào"></textarea></div>
     <label class="chk" style="text-transform:none;letter-spacing:0"><input type="checkbox" style="width:auto" required>Tôi đồng ý nhận thông tin sản phẩm và cập nhật từ Vizone theo Chính sách Bảo mật.</label>
-    <div><button class="btn btn-dark" type="submit">Gửi thông tin →</button></div>
+    <div><button class="btn btn-dark" type="submit" id="send-btn">Gửi thông tin →</button><p id="form-msg" style="font-size:12px;margin-top:10px" role="status"></p></div>
   </form>
 </div></section>
 
@@ -195,5 +195,21 @@ footer .copy{grid-column:1/-1;border-top:1px solid #e1e6ee;padding-top:20px;colo
   <div><h5>Vizone</h5>Chúng tôi ứng dụng công nghệ AI Vision để mang lại giá trị thiết thực cho hàng triệu người dùng trong hệ sinh thái Vingroup.</div>
   <div class="copy">© 2026 VSF AI. All rights reserved.</div>
 </div></footer>
+<script>
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbzDbRgSAesWBWJ9FCwn3FUeoon6QCyvnamqoIDUF0JrWuUBdylR4vzf4NToQstDJzZ6/exec';
+document.getElementById('contact-form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=document.getElementById('send-btn'),msg=document.getElementById('form-msg');
+  btn.disabled=true;msg.textContent='Đang gửi...';
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({
+      donvi:document.getElementById('dv').value,
+      email:document.getElementById('em').value,
+      noidung:document.getElementById('nd').value})});
+    msg.textContent='Cảm ơn bạn! Chúng tôi sẽ liên hệ sớm.';e.target.reset();
+  }catch(err){msg.textContent='Gửi chưa được, vui lòng thử lại.';}
+  btn.disabled=false;
+});
+</script>
 </body>
 </html>
