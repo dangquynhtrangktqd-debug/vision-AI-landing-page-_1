@@ -1,133 +1,34 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vizone – Nền tảng AI Vision cho doanh nghiệp hiện đại</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="Vizone cung cấp bộ giải pháp AI nhận diện và xác thực danh tính: eKYC, Smart OCR, FaceID Access Control, Camera Surveillance.">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#0a1428;--navy2:#0f1b33;--line:#1c2b48;--teal:#3cc4c4;--green:#7ed957;--text:#e8edf5;--muted:#8d9bb5;--light:#eef3f9;--ink:#0f1b33}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Manrope',system-ui,sans-serif;background:var(--navy);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;font-weight:600;font-size:14px;border:1px solid transparent;cursor:pointer;font-family:inherit}
-.btn-teal{background:var(--teal);color:#06202a}
-.btn-ghost{border-color:#33456a;color:var(--text);background:transparent}
-.btn-dark{background:#0a1428;color:#fff}
-/* nav */
-header{position:sticky;top:0;z-index:10;background:rgba(10,20,40,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1280px}
-.logo{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.08em;font-size:14px}
-.logo i{width:16px;height:18px;background:var(--green);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-nav{display:flex;gap:28px;font-size:13px;color:var(--muted)}
-nav a:first-child{color:var(--green)}
-nav a:hover{color:#fff}
-.nav-r{display:flex;gap:14px;align-items:center;font-size:12px;color:var(--muted)}
-.nav-r .btn{padding:6px 16px;background:var(--green);color:#0a2010;font-size:12px}
-/* hero */
-.hero{padding:96px 0 110px;background:radial-gradient(900px 400px at 85% 30%,#13284a 0,transparent 70%)}
-.hero small{display:block;color:var(--green);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px}
-.hero h1{font-size:clamp(34px,5vw,52px);line-height:1.15;font-weight:600;max-width:520px}
-.hero h1 span{color:var(--teal)}
-.hero p{max-width:480px;color:var(--muted);font-size:14px;margin:22px 0 32px}
-.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
-/* trust */
-.light{background:#fff;color:var(--ink);text-align:center}
-.trust{padding:56px 0 24px}
-.trust h2{font-size:20px;font-weight:600;max-width:560px;margin:0 auto 32px}
-.logos{display:flex;gap:44px;justify-content:center;flex-wrap:wrap;font-weight:700;font-size:18px;color:#6b4a2a}
-.logos span:nth-child(2){color:#18a56a}.logos span:nth-child(3){color:#c4472b}.logos span:nth-child(4){color:#d4601a}.logos span:nth-child(5){color:#3b3f55}
-.std{padding:48px 0 70px}
-.std h2{font-size:28px;font-weight:600;margin-bottom:12px}
-.std p.sub{font-size:12px;color:#6b778c;max-width:420px;margin:0 auto 22px}
-.ticks{font-size:11px;color:#3e9a2f;display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
-.badges{display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
-.badge{width:210px;border:1px solid #d9dfe8;border-radius:12px;padding:18px 12px;font-size:10px;letter-spacing:.06em;color:#4a5670;text-transform:uppercase}
-.badge b{display:block;font-size:24px;color:#0a1428;letter-spacing:0;margin:4px 0}
-/* solutions */
-.sol{padding:90px 0}
-.eyebrow{color:var(--green);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
-.sol h2{font-size:34px;font-weight:600;margin:6px 0 18px}
-.sol .intro{margin-left:auto;max-width:520px;color:var(--muted);font-size:13px;display:grid;gap:14px;margin-bottom:48px}
-.card{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center;background:var(--navy2);border:1px solid var(--line);border-radius:10px;padding:32px;margin-bottom:20px;min-height:200px}
-.card h3{font-size:16px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:12px}
-.dots{display:grid;grid-template-columns:repeat(2,9px);gap:3px}
-.dots i{width:9px;height:9px;border-radius:50%;background:var(--c)}
-.card p{font-size:12px;color:var(--muted);max-width:380px;margin-bottom:16px}
-.card a{font-size:12px;color:var(--c)}
-.art{height:150px;border-radius:8px;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 28%,transparent),transparent 70%);border:1px dashed color-mix(in srgb,var(--c) 45%,transparent)}
-.flex{background:#0c1830;border-radius:8px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:30px max(24px,calc(50vw - 550px));margin-top:60px}
-.flex b{font-size:18px;font-weight:600;display:block}
-/* tech */
-.tech{padding:80px 0;background:var(--navy)}
-.tech .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
-.tech h2{font-size:26px;font-weight:600;max-width:260px;line-height:1.3}
-.tech p{font-size:12px;color:var(--muted);max-width:330px;margin:20px 0 22px}
-.stat{display:flex;gap:18px;align-items:center;margin-bottom:26px;font-size:12px;color:var(--muted)}
-.stat b{flex:none;width:52px;height:52px;border-radius:50%;border:1px solid var(--teal);display:grid;place-items:center;font-size:11px;color:#fff}
-/* integration */
-.int{background:var(--light);color:var(--ink);padding:70px 0}
-.int .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-.int h2{font-size:26px;font-weight:600;margin-bottom:24px;line-height:1.3}
-.int ul{list-style:none;display:grid;gap:14px;font-size:12px;color:#445169;max-width:480px}
-.int li{padding-left:22px;position:relative}
-.int li:before{content:"";position:absolute;left:0;top:6px;width:9px;height:9px;border-radius:50%;border:2px solid var(--teal)}
-.int li b{color:var(--teal);font-weight:600}
-.rings{width:200px;height:200px;margin:auto;border-radius:50%;background:radial-gradient(circle,var(--teal) 0 8px,transparent 9px),repeating-radial-gradient(circle,transparent 0 16px,#b6e3e6 17px 18px)}
-/* deployed */
-.dep{background:#fff;color:var(--ink);padding:70px 0}
-.dep h2{font-size:26px;font-weight:600;margin-bottom:30px;line-height:1.3}
-.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.case{border:1px solid #e1e6ee;border-radius:6px;overflow:hidden;font-size:11px;color:#6b778c}
-.case .img{height:110px;padding:10px;display:flex;gap:6px;align-items:flex-start}
-.case .img span{background:#4655c8;color:#fff;font-size:9px;padding:2px 6px;border-radius:3px}
-.case .body{padding:14px 16px 18px}
-.case h4{font-size:13px;font-weight:600;color:var(--ink);margin:6px 0 14px;line-height:1.4}
-.case a{color:var(--teal)}
-/* contact */
-.contact{background:linear-gradient(180deg,#a9c3dc,#c8dae9);color:var(--ink);padding:90px 0}
-.contact .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
-.contact h2{font-size:28px;font-weight:600;line-height:1.3;text-align:center}
-form{display:grid;gap:22px}
-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#445169;display:block}
-input,textarea{width:100%;background:none;border:0;border-bottom:1px solid #8aa0b8;padding:8px 0;font:inherit;font-size:13px;color:var(--ink);outline:none}
-input:focus,textarea:focus{border-color:var(--teal)}
-textarea{resize:none;height:70px}
-.chk{display:flex;gap:8px;font-size:10px;color:#445169}
-/* footer */
-footer{background:#fff;color:var(--ink);padding:50px 0 24px;font-size:11px;color:#556}
-footer .wrap{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:30px}
-footer h5{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#0a1428;margin-bottom:14px}
-footer a{display:block;margin-bottom:8px;color:#6b778c}
-footer .copy{grid-column:1/-1;border-top:1px solid #e1e6ee;padding-top:20px;color:#9aa4b5}
-@media(max-width:800px){nav{display:none}.card,.tech .wrap,.int .wrap,.contact .wrap,footer .wrap{grid-template-columns:1fr}.cases{grid-template-columns:1fr}.sol .intro{margin-left:0}}
-</style>
+<link rel="stylesheet" href="assets/style.css">
+<script>if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('js')</script>
 </head>
-<body>
-<header><div class="wrap">
-  <a class="logo" href="#"><i></i>VIZONE</a>
-  <nav><a href="#giai-phap">Sản phẩm</a><a href="#">Blog</a><a href="#">Demo Tools</a><a href="#">Về chúng tôi</a></nav>
-  <div class="nav-r"><a class="btn" href="#lien-he">Liên hệ</a><span>VN</span></div>
-</div></header>
+<body data-page="home">
+<header></header>
 
 <section class="hero"><div class="wrap">
-  <small>Giải pháp AI nhận diện &amp; xác thực</small>
-  <h1>Nền tảng AI Vision <span>cho doanh nghiệp hiện đại</span></h1>
-  <p>Vizone cung cấp bộ giải pháp AI nhận diện và xác thực danh tính toàn diện — từ eKYC, Smart OCR, FaceID Access Control đến Camera Surveillance — giúp các thành viên Vingroup số hóa vận hành một cách an toàn và hiệu quả.</p>
-  <div class="btns"><a class="btn btn-teal" href="#lien-he">Liên hệ tư vấn</a><a class="btn btn-ghost" href="#giai-phap">Khám phá giải pháp →</a></div>
+  <div>
+    <span class="eyebrow g">Giải pháp AI nhận diện &amp; xác thực</span>
+    <h1>Nền tảng AI Vision <span>cho doanh nghiệp hiện đại</span></h1>
+    <p>Vizone cung cấp bộ giải pháp AI nhận diện và xác thực danh tính toàn diện — từ eKYC, Smart OCR, FaceID Access Control đến Camera Surveillance — giúp các thành viên Vingroup số hóa vận hành một cách an toàn và hiệu quả.</p>
+    <div class="btns"><a class="btn btn-teal" href="#lien-he">Liên hệ tư vấn</a><a class="btn btn-ghost" href="#giai-phap">Khám phá giải pháp →</a></div>
+  </div>
 </div></section>
 
-<section class="light trust"><div class="wrap">
+<section class="white trust"><div class="wrap">
   <h2>Tin dùng bởi các thành viên hàng đầu trong hệ sinh thái Vingroup và các đối tác chiến lược ngoài tập đoàn</h2>
-  <div class="logos"><span>VINHOMES</span><span>GREEN SM</span><span>VINPEARL</span><span>VinWonders</span><span>VINCLUB</span></div>
+  <!-- Thay chữ bằng logo: <img src="images/vinhomes.png" alt="VinHomes" height="40"> -->
+  <div class="logos"><span style="color:#6b4a2a">VINHOMES</span><span style="color:#18a56a">GREEN SM</span><span style="color:#c4472b">VINPEARL</span><span style="color:#d4601a">VinWonders</span><span style="color:#3b3f55">VINCLUB</span></div>
 </div></section>
 
-<section class="light std"><div class="wrap">
+<section class="white std"><div class="wrap">
   <h2>Tiêu chuẩn &amp; Chứng nhận</h2>
-  <p class="sub">Tiêu chuẩn quốc tế không chỉ là một tính năng — đó là nền tảng của chúng tôi. Vizone được xây dựng để đáp ứng các tiêu chuẩn khắt khe nhất về xác thực danh tính, phát hiện giả mạo và phân tích camera thông minh.</p>
+  <p class="s">Tiêu chuẩn quốc tế không chỉ là một tính năng — đó là nền tảng của chúng tôi. Vizone được xây dựng để đáp ứng các tiêu chuẩn khắt khe nhất về xác thực danh tính, phát hiện giả mạo và phân tích camera thông minh.</p>
   <div class="ticks"><span>HƠN 3 TRIỆU LƯỢT XÁC THỰC</span><span>ĐƯỢC CHỨNG NHẬN BỞI iBETA &amp; NIST</span><span>SẴN SÀNG TUÂN THỦ TIÊU CHUẨN QUỐC TẾ</span></div>
   <div class="badges">
     <div class="badge">Level 1 &amp; 2 iBeta<b>iBeta</b>Presentation Attack Detection</div>
@@ -136,32 +37,32 @@ footer .copy{grid-column:1/-1;border-top:1px solid #e1e6ee;padding-top:20px;colo
   </div>
 </div></section>
 
-<section class="sol" id="giai-phap"><div class="wrap">
-  <span class="eyebrow">Sản phẩm</span>
-  <h2>Khám phá giải pháp của chúng tôi</h2>
-  <div class="intro">
+<section class="sec dark" id="giai-phap"><div class="wrap">
+  <span class="eyebrow g">Sản phẩm</span>
+  <h2 class="t" style="font-size:34px">Khám phá giải pháp của chúng tôi</h2>
+  <div style="margin:18px 0 48px auto;max-width:520px;color:var(--muted);font-size:13px;display:grid;gap:14px">
     <p>Đội ngũ chuyên gia của Vizone mang đến kinh nghiệm chuyên sâu để triển khai các giải pháp AI Vision toàn diện — từ xác thực danh tính, nhận diện khuôn mặt đến phân tích hình ảnh camera thông minh.</p>
     <p>Giải pháp của chúng tôi đã được ứng dụng thực tế trong nhiều đơn vị thuộc hệ sinh thái Vingroup, đáp ứng đa dạng bài toán vận hành — từ kiểm soát ra vào, số hóa tài liệu giảm sát an ninh tự động.</p>
   </div>
-  <div class="card" style="--c:#4ade80"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>eKYC<br>Xác thực danh tính</h3><p>Xác minh danh tính khách hàng nhanh chóng và chính xác — hoàn toàn từ xa. Chống giả mạo khuôn mặt, tích hợp với hệ thống CRM và bảo mật truy cập dịch vụ toàn diện.</p><a href="#">Khám phá giải pháp →</a></div><div class="art"></div></div>
-  <div class="card" style="--c:#5b8def"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>FaceID<br>Kiểm soát ra vào</h3><p>Kiểm soát ra vào và chấm công bằng khuôn mặt — không cần thẻ, không điểm chạm. Nhận diện chính xác trong mọi điều kiện ánh sáng, tích hợp với hệ thống CRM của doanh nghiệp.</p><a href="#">Khám phá giải pháp →</a></div><div class="art"></div></div>
-  <div class="card" style="--c:#c9c43a"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>Smart OCR<br>Số hóa tài liệu</h3><p>Trích xuất dữ liệu tự động từ giấy tờ tùy thân – CCCD, hóa đơn, biểu mẫu linh hoạt. Giảm nhập liệu thủ công, tăng tốc độ xử lý hồ sơ và giảm sai sót cho các quy trình nghiệp vụ.</p><a href="#">Khám phá giải pháp →</a></div><div class="art"></div></div>
-  <div class="card" style="--c:#8b7be8"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>Camera Surveillance</h3><p>Phân tích video thời gian thực từ hệ thống camera hiện có — phát hiện hành vi bất thường, đếm người, nhận diện khuôn mặt trong đám đông và cảnh báo tức thì.</p><a href="#">Khám phá giải pháp →</a></div><div class="art"></div></div>
-  <div class="flex"><div><span class="eyebrow" style="color:var(--green)">Tích hợp linh hoạt</span><b>Triển khai on-premise hoặc kết nối API theo yêu cầu</b></div><a class="btn btn-teal" href="#lien-he">Liên hệ tư vấn</a></div>
+  <div class="pcard" style="--c:#4ade80"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>eKYC<br>Xác thực danh tính</h3><p>Xác minh danh tính khách hàng nhanh chóng và chính xác — hoàn toàn từ xa. Chống giả mạo khuôn mặt, tích hợp với hệ thống CRM và bảo mật truy cập dịch vụ toàn diện.</p><a href="ekyc.html">Khám phá giải pháp →</a></div><div class="art" style="--c:#4ade80">Ảnh minh họa eKYC</div></div>
+  <div class="pcard" style="--c:#5b8def"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>FaceID<br>Kiểm soát ra vào</h3><p>Kiểm soát ra vào và chấm công bằng khuôn mặt — không cần thẻ, không điểm chạm. Nhận diện chính xác trong mọi điều kiện ánh sáng, tích hợp với hệ thống CRM của doanh nghiệp.</p><a href="faceid.html">Khám phá giải pháp →</a></div><div class="art" style="--c:#5b8def">Ảnh minh họa FaceID</div></div>
+  <div class="pcard" style="--c:#c9c43a"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>Smart OCR<br>Số hóa tài liệu</h3><p>Trích xuất dữ liệu tự động từ giấy tờ tùy thân – CCCD, hóa đơn, biểu mẫu linh hoạt. Giảm nhập liệu thủ công, tăng tốc độ xử lý hồ sơ và giảm sai sót cho các quy trình nghiệp vụ.</p><a href="smart-ocr.html">Khám phá giải pháp →</a></div><div class="art" style="--c:#c9c43a">Ảnh minh họa Smart OCR</div></div>
+  <div class="pcard" style="--c:#8b7be8"><div><h3><span class="dots"><i></i><i></i><i></i><i></i></span>Camera Surveillance</h3><p>Phân tích video thời gian thực từ hệ thống camera hiện có — phát hiện hành vi bất thường, đếm người, nhận diện khuôn mặt trong đám đông và cảnh báo tức thì.</p><a href="camera-surveillance.html">Khám phá giải pháp →</a></div><div class="art" style="--c:#8b7be8">Ảnh minh họa Camera</div></div>
+  <div class="flexbar"><div><span class="eyebrow g" style="margin:0">Tích hợp linh hoạt</span><b>Triển khai on-premise hoặc kết nối API theo yêu cầu</b></div><a class="btn btn-teal" href="#lien-he">Liên hệ tư vấn</a></div>
 </div></section>
 
-<section class="tech"><div class="wrap">
-  <div><h2>Công nghệ AI được kiểm chứng bởi các tiêu chuẩn hàng đầu quốc tế</h2><p>Vizone được xây dựng trên nền tảng thuật toán AI đạt chuẩn quốc tế — đảm bảo độ chính xác, hiệu năng và bảo mật ở mức cao nhất cho mọi môi trường triển khai thực tế.</p><a class="btn btn-teal" href="#">Xem thêm</a></div>
-  <div>
+<section class="sec dark" style="padding-top:0"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:56px">
+  <div><h2 class="t" style="max-width:280px">Công nghệ AI được kiểm chứng bởi các tiêu chuẩn hàng đầu quốc tế</h2><p class="lead" style="max-width:340px;margin:20px 0 22px">Vizone được xây dựng trên nền tảng thuật toán AI đạt chuẩn quốc tế — đảm bảo độ chính xác, hiệu năng và bảo mật ở mức cao nhất cho mọi môi trường triển khai thực tế.</p><a class="btn btn-teal" href="ekyc.html">Xem thêm</a></div>
+  <div style="padding-top:8px">
     <div class="stat"><b>1st</b><span>Thuật toán nhận diện khuôn mặt đạt top 10 thế giới, Top 1 Việt Nam theo đánh giá NIST FRVT.</span></div>
     <div class="stat"><b>1 sec</b><span>Xử lý xác thực danh tính dưới 1 giây — đảm bảo trải nghiệm người dùng mượt mà và liền mạch.</span></div>
     <div class="stat"><b>1+ bn</b><span>Giải pháp nhận diện hình ảnh và xử lý hàng triệu giao dịch xác thực danh tính trên toàn quốc.</span></div>
   </div>
 </div></section>
 
-<section class="int"><div class="wrap">
-  <div><h2>Giải pháp bảo mật, tích hợp linh hoạt<br>không phụ thuộc nhà cung cấp</h2>
-  <ul>
+<section class="sec pale"><div class="wrap split" style="grid-template-columns:1.3fr 1fr">
+  <div><h2 class="t" style="margin-bottom:24px">Giải pháp bảo mật, tích hợp linh hoạt<br>không phụ thuộc nhà cung cấp</h2>
+  <ul class="ilist">
     <li>Vizone <b>tương thích</b> với hầu hết cơ sở hạ tầng hiện có của Vingroup — từ camera IP, máy chủ nội bộ đến các hệ thống ERP, HR, CRM đang vận hành.</li>
     <li>Mô hình AI được <b>tối ưu hóa</b> để chạy hiệu quả trên nhiều loại phần cứng — từ thiết bị edge device tại điểm bán đến server trung tâm dữ liệu.</li>
     <li>Hệ thống được thiết kế với tư duy kết nối. Chúng tôi cung cấp <b>RESTful API</b> đầy đủ tài liệu, <b>SDK</b> đa nền tảng và hỗ trợ triển khai nhanh chóng.</li>
@@ -169,47 +70,13 @@ footer .copy{grid-column:1/-1;border-top:1px solid #e1e6ee;padding-top:20px;colo
   <div class="rings" aria-hidden="true"></div>
 </div></section>
 
-<section class="dep"><div class="wrap">
-  <h2>Giải pháp Vizone đang được<br>triển khai thực tế</h2>
-  <div class="cases">
-    <article class="case"><div class="img" style="background:#2a1311"><span>FACEID</span></div><div class="body">HCM / Vui chơi giải trí<h4>Vinpearl triển khai FaceID xác thực không cần chạm cho khách hàng</h4><a href="#">Xem chi tiết</a></div></article>
-    <article class="case"><div class="img" style="background:#12301e"><span>CAMERA AI</span></div><div class="body">Hà Nội / Bất động sản<h4>VinHomes triển khai Camera AI kiểm soát ra vào tại 12 khu đô thị thông minh</h4><a href="#">Xem chi tiết</a></div></article>
-    <article class="case"><div class="img" style="background:#14123a"><span>CAMERA AI</span><span>FACEID</span></div><div class="body">Qatar / Y tế<h4>Viện dưỡng lão Mỹ Lâm ứng dụng Camera Surveillance giảm sát an ninh và nhận diện bệnh nhân</h4><a href="#">Xem chi tiết</a></div></article>
-  </div>
+<section class="sec white"><div class="wrap">
+  <h2 class="t lh">Giải pháp Vizone đang được<br>triển khai thực tế</h2>
+  <div class="cases" data-cases="home"></div>
 </div></section>
 
-<section class="contact" id="lien-he"><div class="wrap">
-  <h2>Liên hệ với<br>chúng tôi</h2>
-  <form id="contact-form">
-    <div><label for="dv">Đơn vị / Công ty</label><input id="dv" placeholder="Tên đơn vị của bạn" required></div>
-    <div><label for="em">E-mail</label><input id="em" type="email" placeholder="example@vingroup.net" required></div>
-    <div><label for="nd">Nội dung</label><textarea id="nd" placeholder="Bạn muốn tìm hiểu sản phẩm nào"></textarea></div>
-    <label class="chk" style="text-transform:none;letter-spacing:0"><input type="checkbox" style="width:auto" required>Tôi đồng ý nhận thông tin sản phẩm và cập nhật từ Vizone theo Chính sách Bảo mật.</label>
-    <div><button class="btn btn-dark" type="submit" id="send-btn">Gửi thông tin →</button><p id="form-msg" style="font-size:12px;margin-top:10px" role="status"></p></div>
-  </form>
-</div></section>
-
-<footer><div class="wrap">
-  <div><h5>Demo Tools</h5><a href="#">eKYC</a><a href="#">Kiểm soát ra vào &amp; chấm công</a><a href="#">Smart OCR</a><a href="#">Camera Agent</a><a href="#">Heatmap</a></div>
-  <div><h5>Công ty</h5><a href="#">Về chúng tôi</a><a href="#">Tin tức</a><a href="#">Liên hệ chúng tôi</a></div>
-  <div><h5>Vizone</h5>Chúng tôi ứng dụng công nghệ AI Vision để mang lại giá trị thiết thực cho hàng triệu người dùng trong hệ sinh thái Vingroup.</div>
-  <div class="copy">© 2026 VSF AI. All rights reserved.</div>
-</div></footer>
-<script>
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbwQcZziB3ZNhAOQL6-bqsxTtRougBqdimRfTXBe798pf6WXDffpwBgnEKenvUD69c4W/exec';
-document.getElementById('contact-form').addEventListener('submit',async e=>{
-  e.preventDefault();
-  const btn=document.getElementById('send-btn'),msg=document.getElementById('form-msg');
-  btn.disabled=true;msg.textContent='Đang gửi...';
-  try{
-    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({
-      donvi:document.getElementById('dv').value,
-      email:document.getElementById('em').value,
-      noidung:document.getElementById('nd').value})});
-    msg.textContent='Cảm ơn bạn! Chúng tôi sẽ liên hệ sớm.';e.target.reset();
-  }catch(err){msg.textContent='Gửi chưa được, vui lòng thử lại.';}
-  btn.disabled=false;
-});
-</script>
+<section class="contact" id="lien-he"></section>
+<footer></footer>
+<script src="assets/main.js"></script>
 </body>
 </html>
