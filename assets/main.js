@@ -104,14 +104,14 @@ if(pg){
     const el=e.target;io.unobserve(el);el.classList.add('in');
     const d=parseFloat(el.style.getPropertyValue('--d'))||0;
     setTimeout(()=>{el.classList.remove('rv','in','l','r');el.style.removeProperty('--d');
-      if(el.classList.contains('mock'))el.classList.add('float')},(d+0.9)*1000);
+      if(el.classList.contains('mock')||el.classList.contains('hero-art'))el.classList.add('float')},(d+0.9)*1000);
   }),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   const queue=[];
   const add=(el,i=0,cls)=>{if(el.classList.contains('rv'))return;el.classList.add('rv');cls&&el.classList.add(cls);
     el.style.setProperty('--d',Math.min(i*.09,.45)+'s');queue.push(el)};
 
   document.querySelectorAll('.hero .wrap>div:first-child>*').forEach((e,i)=>add(e,i+1));
-  document.querySelectorAll('.hero .mock').forEach(e=>add(e,3,'r'));
+  document.querySelectorAll('.hero .mock,.hero .hero-art').forEach(e=>add(e,3,'r'));
   document.querySelectorAll('section:not(.hero)>.wrap>*,footer>.wrap>*:not(.copy)').forEach(el=>{
     if(el.matches(GRIDS))[...el.children].forEach((c,i)=>add(c,i));
     else if(el.matches('.split')){const rev=el.classList.contains('rev');

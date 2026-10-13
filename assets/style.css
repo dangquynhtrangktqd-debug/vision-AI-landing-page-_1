@@ -220,3 +220,17 @@ header.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.28);background:rgba(10,20,40,.
 @keyframes float{50%{transform:translateY(-10px)}}
 @keyframes fadeup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .pgrid.again>*{animation:fadeup .55s both;animation-delay:calc(var(--i,0)*70ms)}
+
+/* ===== Ảnh thật thay khung giữ chỗ ===== */
+.art:has(img){border:0;background:none;padding:0;min-height:0}
+.art:has(img) img{width:auto;max-width:100%;height:auto;object-fit:contain;margin:0 auto}
+.pcard .art:has(img){justify-content:end;background:none;border:0;min-height:0}
+.pcard .art:has(img) img{max-height:190px;width:auto;margin-left:auto}
+.logos{align-items:center}.logos img{height:auto;width:auto;max-height:60px}
+.badges img{width:287px;max-width:100%;height:auto}
+
+/* trang chủ: khối nền trắng + hero ảnh */
+.white .stat{color:var(--body)}.white .stat b{color:var(--ink);border-color:var(--teal)}.stat strong{font-weight:700}.white .stat strong{color:var(--ink)}
+.hero-art{width:100%;max-width:470px;height:auto;margin-left:auto}
+.hero-art.float{animation:float 6s ease-in-out infinite}
+.purple .art img{border-radius:16px}
