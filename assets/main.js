@@ -60,7 +60,7 @@ const SETS={
 const TAGC={'FACEID':'FACEID','EKYC':'EKYC','SMART OCR':'OCR','CAMERA AI':'CAM','CÔNG NGHỆ':'TECH'};
 document.querySelectorAll('[data-cases]').forEach(el=>{
   el.innerHTML=(SETS[el.dataset.cases]||[]).map(([k,tags])=>{const c=C[k];
-    return `<article class="case"><div class="img" style="background:${c.bg}">${c.img?`<img src="${c.img}" alt="${c.h}" loading="lazy">`:''}${tags.map(t=>`<span class="tag ${TAGC[t]}">${t}</span>`).join('')}<span class="lg">${c.lg}</span></div>
+    return `<article class="case"><div class="img" style="background:${c.bg}">${c.img?`<img src="${c.img}" alt="${c.h}">`:''}${tags.map(t=>`<span class="tag ${TAGC[t]}">${t}</span>`).join('')}<span class="lg">${c.lg}</span></div>
     <div class="body">${c.loc}<h4>${c.h}</h4><a class="more" href="${c.url}">Xem chi tiết</a></div></article>`}).join('');
 });
 
